@@ -1,8 +1,28 @@
 " Example Vim configuration.
 " Copy or symlink to ~/.vimrc or ~/_vimrc.
-execute pathogen#infect()
-
 set nocompatible                  " Must come first because it changes other options.
+
+if has('vim_starting')
+  set runtimepath+=~/.vim/bundle/neobundle.vim
+endif
+
+call neobundle#rc(expand('~/.vim/bundle/'))
+
+" Let NeoBundle manage NeoBundle
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+" Recommended to install
+" After install, turn shell ~/.vim/bundle/vimproc, (n,g)make -f your_machines_makefile
+NeoBundle 'Shougo/vimproc'
+NeoBundle 'Valloric/YouCompleteMe'
+NeoBundle 'mileszs/ack.vim'
+NeoBundle 'kien/ctrlp.vim'
+NeoBundle 'tpope/vim-commentary'
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'airblade/vim-gitgutter'
+NeoBundle 'tpope/vim-rails'
+
+NeoBundleCheck
 
 syntax enable                     " Turn on syntax highlighting.
 filetype plugin indent on         " Turn on file type detection.

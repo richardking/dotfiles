@@ -1,0 +1,9 @@
+YouCompleteMe
+ack.vim
+ctrlp.vim
+neobundle.vim
+vim-commentary
+vim-fugitive
+vim-gitgutter
+vim-rails
+vimproc
