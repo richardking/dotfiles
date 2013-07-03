@@ -49,8 +49,15 @@ set laststatus=2                  " Show the status line all the time
 " Useful status information at bottom of screen
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
 
+let mapleader=","
+
 " Or use vividchalk
 colorscheme molokai
+
+cnoremap %% <C-R>=expand('%:h').'/'<cr>
+map <leader>e :edit %%
+map <leader>v :view %%
+map <leader><leader> <C-^>
 
 " Tab mappings.
 map <leader>tt :tabnew<cr>
@@ -70,6 +77,11 @@ let g:ctrlp_custom_ignore = {
   \ }
 
 let g:ctrlp_clear_cache_on_exit=0
+
+let g:ctrlp_prompt_mappings = {
+    \ 'AcceptSelection("e")': ['<c-t>'],
+    \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
+    \ }
 
 " Uncomment to use Jamis Buck's file opening plugin
 "map <Leader>t :FuzzyFinderTextMate<Enter>
