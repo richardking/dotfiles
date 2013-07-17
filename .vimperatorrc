@@ -1,0 +1,6 @@
+set hintchars=sadjklewcmpgh
+
+set cpt=l
+set titlestring="Mozilla Firefox"
+
+map <M-f> /
