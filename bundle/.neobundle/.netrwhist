@@ -1,9 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
-let g:netrw_dirhist_1='/Users/richardking/Projects/br/status_board'
-let g:netrw_dirhist_2='/Users/richardking/Projects/br/gitcycle'
-let g:netrw_dirhist_3='/Users/richardking/Projects/br/gitcycle/lib'
-let g:netrw_dirhist_4='/Users/richardking/Projects/br/gitcycle'
-let g:netrw_dirhist_5='/Users/richardking/Projects/br/gitcycle/bin'
-let g:netrw_dirhist_6='/Users/richardking/Projects/br/statuspage'
-let g:netrw_dirhist_7='/Users/richardking/.vim'
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/Users/richardking/Projects/br/api/app/models'
+let g:netrw_dirhist_2='/Users/richardking/Projects/br/api'
+let g:netrw_dirhist_3='/Users/richardking/Projects/br/api/app'
+let g:netrw_dirhist_4='/Users/richardking/Projects/br/api/app/workers'
+let g:netrw_dirhist_5='/Users/richardking/Projects/br/breport'

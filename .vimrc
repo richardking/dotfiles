@@ -21,6 +21,9 @@ NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'tpope/vim-rails'
 NeoBundle 'Valloric/YouCompleteMe'
+NeoBundle 'godlygeek/tabular'
+NeoBundle 'tpope/vim-endwise'
+" Launch vim, run :NeoBundleInstall
 
 NeoBundleCheck
 
@@ -89,6 +92,37 @@ map <leader>tp :tabprevious<cr>
 map <leader>tf :tabfirst<cr>
 map <leader>tl :tablast<cr>
 map <leader>tm :tabmove
+map <leader>h <C-w>h
+map <leader>j <C-w>j
+map <leader>k <C-w>k
+map <leader>l <C-w>l
+
+map <leader>l :ls<cr>:b 
+map <leader>b :bp<cr>
+map <leader>f :bn<cr>
+map <leader>1 :1b<CR>
+map <leader>2 :2b<CR>
+map <leader>3 :3b<CR>
+map <leader>4 :4b<CR>
+map <leader>5 :5b<CR>
+map <leader>6 :6b<CR>
+map <leader>7 :7b<CR>
+map <leader>8 :8b<CR>
+map <leader>9 :9b<CR>
+map <leader>0 :10b<CR>
+
+" Tabular.vim mappings
+map <leader>= :Tab /=<cr>
+
+map <Up> <NOP>
+map <Down> <NOP>
+map <Left> <NOP>
+map <Right> <NOP>
+
+imap <Up> <NOP>
+imap <Down> <NOP>
+imap <Left> <NOP>
+imap <Right> <NOP>
 
 " Sane Ignore For ctrlp
 let g:ctrlp_custom_ignore = {
@@ -98,10 +132,10 @@ let g:ctrlp_custom_ignore = {
 
 let g:ctrlp_clear_cache_on_exit=0
 
-let g:ctrlp_prompt_mappings = {
-    \ 'AcceptSelection("e")': ['<c-t>'],
-    \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
-    \ }
+" let g:ctrlp_prompt_mappings = {
+"     \ 'AcceptSelection("e")': ['<c-t>'],
+"     \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
+"     \ }
 
 " Uncomment to use Jamis Buck's file opening plugin
 "map <Leader>t :FuzzyFinderTextMate<Enter>

@@ -2,7 +2,9 @@ YouCompleteMe
 ack.vim
 ctrlp.vim
 neobundle.vim
+tabular
 vim-commentary
+vim-endwise
 vim-fugitive
 vim-gitgutter
 vim-rails
