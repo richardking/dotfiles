@@ -23,6 +23,7 @@ NeoBundle 'tpope/vim-rails'
 NeoBundle 'Valloric/YouCompleteMe'
 NeoBundle 'godlygeek/tabular'
 NeoBundle 'tpope/vim-endwise'
+" NeoBundle 'christoomey/vim-tmux-navigator'
 " Launch vim, run :NeoBundleInstall
 
 NeoBundleCheck
@@ -32,6 +33,7 @@ filetype plugin indent on         " Turn on file type detection.
 
 runtime macros/matchit.vim        " Load the matchit plugin.
 
+set t_Co=256                      " Enable 256 colors in terminal vim
 set showcmd                       " Display incomplete commands.
 set showmode                      " Display the mode you're in.
 
@@ -67,10 +69,28 @@ let Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
 set tabstop=2                    " Global tab width.
 set shiftwidth=2                 " And again, related.
 set expandtab                    " Use spaces instead of tabs
+set list listchars=tab:»·,trail:· " show extra space characters
 
 set laststatus=2                  " Show the status line all the time
+set cursorline
 " Useful status information at bottom of screen
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
+
+" split right and vsplit below
+set splitbelow
+set splitright
+
+" hacky way to change insert mode cursor shape with tmux
+" http://blog.terriblelabs.com/blog/2013/02/09/stupid-vim-tricks-how-to-change-insert-mode-cursor-shape-with-tmux/
+" let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+" let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+" inoremap <special> <Esc> <Esc>hl
+" set guicursor+=i:blinkwait0
+" below is for terminal vim without tmux
+let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+inoremap <special> <Esc> <Esc>hl
+set guicursor+=i:blinkwait0
 
 let mapleader=","
 
@@ -131,6 +151,7 @@ let g:ctrlp_custom_ignore = {
   \ }
 
 let g:ctrlp_clear_cache_on_exit=0
+let g:ctrlp_max_height = 15
 
 " let g:ctrlp_prompt_mappings = {
 "     \ 'AcceptSelection("e")': ['<c-t>'],
@@ -150,3 +171,5 @@ let g:ctrlp_clear_cache_on_exit=0
 " Automatic fold settings for specific files. Uncomment to use.
 " autocmd FileType ruby setlocal foldmethod=syntax
 " autocmd FileType css  setlocal foldmethod=indent shiftwidth=2 tabstop=2
+
+runtime macros/matchit.vim
