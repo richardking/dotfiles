@@ -6,13 +6,14 @@ if has('vim_starting')
   set runtimepath+=~/.vim/bundle/neobundle.vim
 endif
 
-call neobundle#rc(expand('~/.vim/bundle/'))
+call neobundle#begin(expand('~/.vim/bundle/'))
 
 " Let NeoBundle manage NeoBundle
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 " Recommended to install
 " After install, turn shell ~/.vim/bundle/vimproc, (n,g)make -f your_machines_makefile
+"
 NeoBundle 'Shougo/vimproc'
 NeoBundle 'mileszs/ack.vim'
 NeoBundle 'kien/ctrlp.vim'
@@ -23,8 +24,15 @@ NeoBundle 'tpope/vim-rails'
 NeoBundle 'Valloric/YouCompleteMe'
 NeoBundle 'godlygeek/tabular'
 NeoBundle 'tpope/vim-endwise'
+NeoBundle 'vim-ruby/vim-ruby'
+NeoBundle 'tpope/vim-bundler'
+NeoBundle 'elixir-lang/vim-elixir'
+NeoBundle 'fatih/vim-go'
+
 " NeoBundle 'christoomey/vim-tmux-navigator'
-" Launch vim, run :NeoBundleInstall
+" Launch vim, should ask if you want to install new bundle
+
+call neobundle#end()
 
 NeoBundleCheck
 
@@ -73,12 +81,17 @@ set list listchars=tab:»·,trail:· " show extra space characters
 
 set laststatus=2                  " Show the status line all the time
 set cursorline
+" Highlight active column
+set cuc cul
 " Useful status information at bottom of screen
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
 
 " split right and vsplit below
 set splitbelow
 set splitright
+
+" stop vim-gitgutter from running in realtime
+let g:gitgutter_realtime = 0
 
 " hacky way to change insert mode cursor shape with tmux
 " http://blog.terriblelabs.com/blog/2013/02/09/stupid-vim-tricks-how-to-change-insert-mode-cursor-shape-with-tmux/
@@ -115,7 +128,7 @@ map <leader>tm :tabmove
 map <leader>h <C-w>h
 map <leader>j <C-w>j
 map <leader>k <C-w>k
-map <leader>l <C-w>l
+" map <leader>l <C-w>l
 
 map <leader>l :ls<cr>:b 
 map <leader>b :bp<cr>
@@ -152,6 +165,8 @@ let g:ctrlp_custom_ignore = {
 
 let g:ctrlp_clear_cache_on_exit=0
 let g:ctrlp_max_height = 15
+
+let g:go_disable_autoinstall = 1
 
 " let g:ctrlp_prompt_mappings = {
 "     \ 'AcceptSelection("e")': ['<c-t>'],

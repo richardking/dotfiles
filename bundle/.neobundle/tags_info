@@ -3,9 +3,13 @@ ack.vim
 ctrlp.vim
 neobundle.vim
 tabular
+vim-bundler
 vim-commentary
+vim-elixir
 vim-endwise
 vim-fugitive
 vim-gitgutter
+vim-go
 vim-rails
+vim-ruby
 vimproc
